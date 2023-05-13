@@ -1,0 +1,39 @@
+import  express  from "express";
+import cors from "cors"
+import axios from "axios"
+
+const app = express()
+
+const corsOption = {
+    origin:"http://localhost:5173"
+}
+
+app.use(cors(corsOption))
+
+app.use(express.json())
+
+app.get("/random" , (req , res) => {
+    axios
+    .get("http://dog.ceo/api/breeds/image/random")
+    .then((result) => {
+        res.status(200).json(result.data.message)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+app.get("/list" , (req , res) => {
+    axios
+    .get("http://dog.ceo/api/breeds/list/all")
+    .then((result) => {
+        res.status(200).json(result.data.message)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+
+app.listen(3000, () => {
+    console.log("server started at port:3000")
+})
+

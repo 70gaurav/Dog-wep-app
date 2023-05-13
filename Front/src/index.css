@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: gray;
+}
+.dog{
+    height:500px;
+    width: 500px;
+}
+.dog img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+button{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+}
+button:hover{
+    color: #000;
+    background-color: #fff;
+}
