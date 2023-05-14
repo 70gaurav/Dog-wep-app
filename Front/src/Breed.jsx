@@ -4,6 +4,7 @@ import axios from "axios"
 
 function Breed() {
   const [list, setList] = useState([])
+  const [sublist , setSublist] = useState([])
 
  
    useEffect(() => {
@@ -17,17 +18,36 @@ function Breed() {
       console.log(err)
     })
    },[])
+
+   function sublistHandler(e) {
+    // setSublist(e.target.value)
+    let name = e.target.value
+    let sub = list.filter((breed) => {
+      if(breed[0] === name){
+        return breed
+      }
+    })
+    setSublist(sub)
+   }
   
 
   console.log(list)
+  console.log(sublist)
+
   
 
   return (
     <>
-    <select>
-      <option selected disabled>Select the breed</option>
+    <select onChange={(e) => sublistHandler(e)}>
+      <option selected disabled >Select the breed</option>
       { list ? list.map((item, index) => (
-        <option key={index}>{item}</option>
+        <option key={index} value={item[0]}>{item[0]}</option>
+      )) : " "}
+      </select>
+    <select>
+      <option selected disabled >Select the sub breed</option>
+      { sublist ? sublist.map((item, index) => (
+        <option key={index} value={item[1]}>{item[1]}</option>
       )) : " "}
       </select>
     </>
