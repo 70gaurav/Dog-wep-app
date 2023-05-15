@@ -32,6 +32,18 @@ app.get("/list" , (req , res) => {
         console.log(err)
     })
 })
+app.get("/breed/:name", (req, res) => {
+    const breedName = req.params.name;
+    axios
+      .get(`http://dog.ceo/api/breed/${breedName}/images/random`)
+      .then((result) => {
+        res.status(200).json(result.data.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+  
 
 app.listen(3000, () => {
     console.log("server started at port:3000")
