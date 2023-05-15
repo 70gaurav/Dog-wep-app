@@ -47,7 +47,9 @@ function Breed() {
     <select>
       <option selected disabled >Select the sub breed</option>
       { sublist ? sublist.map((item, index) => (
-        <option key={index} value={item[1]}>{item[1]}</option>
+        item[1].map((name, index) => {
+          return <option key={index} value={name}>{name }</option>
+        })
       )) : " "}
       </select>
     </>
