@@ -34,6 +34,7 @@ app.get("/list" , (req , res) => {
 })
 app.get("/breed/:name", (req, res) => {
     const breedName = req.params.name;
+    console.log(breedName)
     axios
       .get(`http://dog.ceo/api/breed/${breedName}/images/random`)
       .then((result) => {

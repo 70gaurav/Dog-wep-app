@@ -6,13 +6,14 @@ function Breed() {
   const [list, setList] = useState([])
   const [sublist, setSublist] = useState([])
   const [breed, setBreed] = useState('')
+  const [image, setImage] = useState('')
 
 
   function getImage() {
-    axios.get("http://localhost:3000/breed/" + breed )
+    axios.get("http://localhost:3000/breed/" + breed)
       .then((result) => {
-        console.log(result)
-        // setImage(result.data)
+        console.log(result.data)
+        setImage(result.data)
       })
       .catch((err) => {
         console.log(err)
@@ -51,13 +52,14 @@ function Breed() {
 
 
   return (
-    <>
-      <select onChange={(e) => {sublistHandler(e);getImage()}}>
+    <div className='breed'>
+      <select onChange={(e) => { sublistHandler(e) }}>
         <option selected disabled >Select the breed</option>
         {list ? list.map((item, index) => (
           <option key={index} value={item[0]}>{item[0]}</option>
         )) : " "}
       </select>
+
       {/* <select>
         <option selected disabled >Select the sub breed</option>
         {sublist ? sublist.map((item, index) => (
@@ -66,7 +68,13 @@ function Breed() {
           })
         )) : " "}
       </select> */}
-    </>
+
+      <div className='breedimage'>
+        <img src={image}></img>
+      </div>
+      <button onClick={getImage}>click to get image</button>
+    </div>
+
   )
 }
 

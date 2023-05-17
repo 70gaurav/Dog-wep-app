@@ -9,7 +9,7 @@
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgb(240, 144, 144);
 }
 .dog{
     height:500px;
@@ -31,3 +31,34 @@ button:hover{
     color: #000;
     background-color: #fff;
 }
+a:hover{
+    color: #000;
+    background-color: #fff;
+}
+.breed{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(240, 144, 144);
+
+}
+.breed select{
+    height: 50px;
+    border: 4px solid;
+}
+.breed img{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+

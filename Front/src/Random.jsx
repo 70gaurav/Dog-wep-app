@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import {Link} from "react-router-dom"
 
 function Random() {
   const [image, setImage] = useState('')
-
   function getImage() {
     axios.get("http://localhost:3000/random")
     .then((result) => {
@@ -25,6 +25,7 @@ function Random() {
          :" "
       }
       <button onClick={getImage}>Click to get random dog image</button>
+      <Link to={"/breed"}>click to search by breed</Link>
     </div>
   )
 }
