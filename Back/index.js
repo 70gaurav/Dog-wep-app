@@ -32,9 +32,10 @@ app.get("/list" , (req , res) => {
         console.log(err)
     })
 })
-app.get("/breed/:name", (req, res) => {
-    const breedName = req.params.name;
-    console.log(breedName)
+
+app.get("/breed/:subBreed?/:breed", (req, res) => {
+    const { subBreed, breed } = req.params;
+    const breedName = subBreed ? `${subBreed} ${breed}` : breed;
     axios
       .get(`http://dog.ceo/api/breed/${breedName}/images/random`)
       .then((result) => {
@@ -44,6 +45,7 @@ app.get("/breed/:name", (req, res) => {
         console.log(err);
       });
   });
+  
   
 
 app.listen(3000, () => {
