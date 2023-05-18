@@ -35,7 +35,8 @@ app.get("/list" , (req , res) => {
 
 app.get("/breed/:subBreed?/:breed", (req, res) => {
     const { subBreed, breed } = req.params;
-    const breedName = subBreed ? `${subBreed} ${breed}` : breed;
+    const breedName = subBreed ? `${subBreed}${breed}` : breed;
+    
     axios
       .get(`http://dog.ceo/api/breed/${breedName}/images/random`)
       .then((result) => {

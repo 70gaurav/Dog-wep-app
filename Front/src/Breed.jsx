@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function Breed() {
   const [list, setList] = useState([]);
   const [sublist, setSublist] = useState([]);
@@ -9,8 +10,9 @@ function Breed() {
   const [image, setImage] = useState('');
 
   function getImage() {
+    const breedName = subBreed ? `${subBreed}-${breed}` : breed;
     axios
-      .get(`http://localhost:3000/breed/${subBreed ? subBreed + " " : ""}${breed}`)
+      .get(`http://localhost:3000/breed/${breedName}`)
       .then((result) => {
         console.log(result.data);
         setImage(result.data);
@@ -45,7 +47,7 @@ function Breed() {
   return (
     <div className='breed'>
       <select onChange={(e) => sublistHandler(e)}>
-        <option disabled>Select the breed</option>
+        <option disabled selected>Select the breed</option>
         {list
           ? list.map((item, index) => (
               <option key={index} value={item[0]}>
@@ -55,9 +57,9 @@ function Breed() {
           : ''}
       </select>
 
-      {sublist.length > 0 && sublist[0][1].length > 0 ? (
+      {/* {sublist.length > 0 && sublist[0][1].length > 0 ? (
         <select onChange={(e) => setSubBreed(e.target.value)}>
-          <option disabled>Select the sub breed</option>
+          <option disabled selected>Select the sub breed</option>
           {sublist.map((item, index) =>
             item[1].map((name, index) => (
               <option key={index} value={name}>
@@ -66,7 +68,7 @@ function Breed() {
             ))
           )}
         </select>
-      ) : null}
+      ) : null} */}
 
       {image && (
         <div className='breedimage'>

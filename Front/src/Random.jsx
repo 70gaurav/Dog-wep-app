@@ -24,8 +24,9 @@ function Random() {
           <div className='dog'><img src={image}></img></div>
          :" "
       }
-      <button onClick={getImage}>Click to get random dog image</button>
-      <Link to={"/breed"}>click to search by breed</Link>
+       <button onClick={getImage}>Click to get random dog image</button>
+         <Link to={"/breed"}>click to search by breed</Link>
+      
     </div>
   )
 }

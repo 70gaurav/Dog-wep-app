@@ -7,13 +7,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     flex-direction: column;
-    background-color: rgb(240, 144, 144);
+    background: url("./image/bg1.png") no-repeat fixed center / cover;
 }
 .dog{
-    height:500px;
-    width: 500px;
+    height:400px;
+    width: 400px;
 }
 .dog img{
     height: 100%;
@@ -36,12 +36,13 @@ a:hover{
     background-color: #fff;
 }
 .breed{
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(240, 144, 144);
+    background:url("./image/bg2.jpg") no-repeat fixed center / cover;
+
 
 }
 .breed select{
@@ -60,5 +61,30 @@ a{
     padding: 15px;
     border-radius: 10px;
     margin-top: 1rem;
+}
+header{
+    background-color: #fff;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img{
+    height: 100px;
+}
+.nav ul{
+list-style: none;
+display: flex;
+}
+.nav li{
+margin: 0 0.5rem;
+}
+.nav a{
+    background-color:#87c1e2;
+}
+.mid img{
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 100px;
 }
 
