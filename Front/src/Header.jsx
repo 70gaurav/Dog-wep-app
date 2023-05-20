@@ -12,7 +12,7 @@ function Header() {
             <div className='nav'>
               <ul>
                 <li><Link to={"/"}>Home</Link></li>
-                <li><Link to={"/breed"}>search by breed</Link></li>
+                <li><Link to={"/breed"}>Breed</Link></li>
               </ul>
             </div>
 
