@@ -5,7 +5,7 @@ import axios from "axios"
 const app = express()
 
 const corsOption = {
-    origin:"http://localhost:5173"
+    origin:"https://dog-web-app-five.vercel.app/"
 }
 
 app.use(cors(corsOption))
