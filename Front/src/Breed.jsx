@@ -12,7 +12,7 @@ function Breed() {
   function getImage() {
     const breedName = subBreed ? `${subBreed}-${breed}` : breed;
     axios
-      .get(`http://localhost:3000/breed/${breedName}`)
+      .get(`https://localhost:3000/breed/${breedName}`)
       .then((result) => {
         console.log(result.data);
         setImage(result.data);

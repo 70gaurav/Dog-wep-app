@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function Random() {
   const [image, setImage] = useState('')
   function getImage() {
-    axios.get("https://dog-web-9w9skhvks-70gaurav.vercel.app/random")
+    axios.get("http://localhost:3000/random")
     .then((result) => {
       console.log(result.data)
       setImage(result.data)
@@ -15,7 +15,6 @@ function Random() {
     })
 
   }
-
 
   return (
     <div className='wrapper' >

@@ -5,7 +5,7 @@ import axios from "axios"
 const app = express()
 
 const corsOption = {
-    origin:"https://dog-web-app-five.vercel.app/"
+    origin:"http://localhost:5173"
 }
 
 app.use(cors(corsOption))
@@ -35,7 +35,7 @@ app.get("/list" , (req , res) => {
 
 app.get("/breed/:subBreed?/:breed", (req, res) => {
     const { subBreed, breed } = req.params;
-    const breedName = subBreed ? `${subBreed}${breed}` : breed;
+    const breedName = subBreed ? `${subBreed}${breed}`:breed
     
     axios
       .get(`http://dog.ceo/api/breed/${breedName}/images/random`)
